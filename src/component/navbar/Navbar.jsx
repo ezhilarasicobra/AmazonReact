@@ -5,7 +5,7 @@ import './Navbar.css'
 import axios from 'axios'
 import { DataContext } from '../../context/DataContext'
 
-const path='http://localhost:4001/'
+const path='https://vibrant-kare-98c436.netlify.app/'
 
 const color=['#a5e6a8','#ebbccc','#e6c0aa','#b2d1ed']
 
