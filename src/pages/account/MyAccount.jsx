@@ -9,7 +9,7 @@ const MyAccount = () => {
     const AmazonUserId=localStorage.getItem('AmazonUserId')
    
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -37,7 +37,7 @@ const MyAccount = () => {
  },[])
     const getOrderDetails=async()=>{
         
-        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/order/getmy_order/${AmazonUserId}`)
+        const res=await axios.get(`/order/getmy_order/${AmazonUserId}`)
         // console.log(res.data)
         setOrder(res.data.sort((p1, p2) => {
             return new Date(p2.date) - new Date(p1.date);

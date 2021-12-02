@@ -6,7 +6,7 @@ const Wish = ({wid,index,productID,date,getOrderDetails}) => {
     const [value, setValue] = useState([])
 
     const getpbyId=async()=>{
-        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/pdt/get_product/${productID}`)
+        const res=await axios.get(`/pdt/get_product/${productID}`)
         // console.log(res.data)
         setValue(res.data)
     }
@@ -15,7 +15,7 @@ const Wish = ({wid,index,productID,date,getOrderDetails}) => {
     }, [productID])
 
     const DeleteWish=async()=>{
-        const res= await axios.delete(`https://cloneprojectamzon.herokuapp.com/pdt/deletewish/${wid}`)
+        const res= await axios.delete(`/pdt/deletewish/${wid}`)
         if(res.data.status)
         {
             getOrderDetails()

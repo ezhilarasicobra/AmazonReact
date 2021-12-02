@@ -15,7 +15,7 @@ const OrderTracker = () => {
     const AmazonUserId=localStorage.getItem('AmazonUserId')
    
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -43,7 +43,7 @@ const OrderTracker = () => {
  },[])
     const getOrderDetails=async()=>{
         
-        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/order/getmy_order/${AmazonUserId}`)
+        const res=await axios.get(`/order/getmy_order/${AmazonUserId}`)
         // console.log(res.data)
         setOrder(res.data.sort((p1, p2) => {
             return new Date(p2.date) - new Date(p1.date);
@@ -60,14 +60,14 @@ const OrderTracker = () => {
 
 const OrderHandel=async(e)=>{
     setOrderId(e.target.value)
-    const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/order/order-tracker/${e.target.value}`)
+    const res=await axios.get(`/order/order-tracker/${e.target.value}`)
     
     setOrderIdData(res.data)
 }
 // console.log(socketorderId)
 const socketOrder=async(oid)=>{
    
-    const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/order/order-tracker/${oid}`)
+    const res=await axios.get(`/order/order-tracker/${oid}`)
     // console.log(res.data)
      setOrderIdData(res.data)
 }

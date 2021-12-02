@@ -16,7 +16,7 @@ const Cart = () => {
 
 
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -50,7 +50,7 @@ const Cart = () => {
 
  const getPro=()=>{
     //  console.log(JSON.stringify({ ids: Object.keys(cart.items)}))
-     fetch('https://cloneprojectamzon.herokuapp.com/pdt/get_cart_products', {
+     fetch('/pdt/get_cart_products', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

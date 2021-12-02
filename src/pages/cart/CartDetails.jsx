@@ -25,7 +25,7 @@ const AmazonUser=localStorage.getItem('AmazonUser')
    
     const timeout = useRef(null)
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -59,7 +59,7 @@ const AmazonUser=localStorage.getItem('AmazonUser')
 
  const getPro=()=>{
     //  console.log(JSON.stringify({ ids: Object.keys(cart.items)}))
-     fetch('https://cloneprojectamzon.herokuapp.com/pdt/get_cart_products', {
+     fetch('/pdt/get_cart_products', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ const getaddress=async ()=>{
     
    
     
-       const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/auth/getaddress/${AmazonUserId}`)
+       const res=await axios.get(`/auth/getaddress/${AmazonUserId}`)
       
        setYourAddress(res.data)
     //    console.log(res.data)
@@ -123,7 +123,7 @@ const getaddress=async ()=>{
            address:addr
 
        }
-       const res= await axios.post('https://cloneprojectamzon.herokuapp.com/auth/add_address',data)
+       const res= await axios.post('/auth/add_address',data)
        
         setShowaddress(false)
         
@@ -153,7 +153,7 @@ const data={
     cart:cart
 }
             
-const res=await axios.post(`https://cloneprojectamzon.herokuapp.com/order/add_order`,data)
+const res=await axios.post(`/order/add_order`,data)
 //  console.log(res.data)
 
   if(res.data.success)

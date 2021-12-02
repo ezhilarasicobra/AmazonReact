@@ -3,7 +3,7 @@ import { NavLink,useHistory } from 'react-router-dom'
 import './Auth.css'
 import axios from 'axios'
 
-const path='https://cloneprojectamzon.herokuapp.com/'
+const path='http://localhost:4001/'
 const Login = () => {
    
     const [email, setEmail] = useState("")
@@ -17,7 +17,7 @@ const Login = () => {
   
 
     const checkAuth=()=>{
-        axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+        axios.get("/auth/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Amazontoken")
             }
@@ -53,7 +53,7 @@ const Login = () => {
             email,
             password
         }
-        const res=await axios.post("https://cloneprojectamzon.herokuapp.com/auth/login", data);
+        const res=await axios.post("/auth/login", data);
         // console.log(res.data)
         if(res.data.msg)
         {

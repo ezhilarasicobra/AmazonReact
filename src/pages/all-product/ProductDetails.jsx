@@ -13,7 +13,7 @@ const ProductDetails = () => {
  const his=useHistory()
  const timeout = useRef(null)
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -42,7 +42,7 @@ const ProductDetails = () => {
 
 
     const getPBYId = async () => {
-        const res = await axios.get(`https://cloneprojectamzon.herokuapp.com/pdt/get_product/${id}`)
+        const res = await axios.get(`/pdt/get_product/${id}`)
         setPdata(res.data)
     }
     useEffect(() => {

@@ -10,7 +10,7 @@ const All_products = () => {
 const his=useHistory()
     const timeout = useRef(null)
  const checkAuth=()=>{
-    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
+    axios.get("/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -38,7 +38,7 @@ const his=useHistory()
  },[])
 
     const getdata=async()=>{
-        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/pdt/get_products`)
+        const res=await axios.get(`/pdt/get_products`)
         setPdata(res.data.sort((p1, p2) => {
             return new Date(p2.date) - new Date(p1.date);
           }))
@@ -49,7 +49,7 @@ const his=useHistory()
     }, [])
 
     const sortData= async (sort)=>{
-        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/pdt/sort/${sort}`)
+        const res=await axios.get(`/pdt/sort/${sort}`)
         setPdata(res.data)
 }
     
