@@ -4,7 +4,7 @@ import './Auth.css'
 import axios from 'axios'
 
 
-const path='http://localhost:4001/'
+const path='https://vibrant-kare-98c436.netlify.app/'
 
 const Register = () => {
     const [name, setName] = useState("")
