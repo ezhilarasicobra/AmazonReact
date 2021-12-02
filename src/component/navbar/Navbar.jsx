@@ -5,7 +5,7 @@ import './Navbar.css'
 import axios from 'axios'
 import { DataContext } from '../../context/DataContext'
 
-const path='http://localhost:4001/'
+const path='https://cloneprojectamzon.herokuapp.com/'
 
 const color=['#a5e6a8','#ebbccc','#e6c0aa','#b2d1ed']
 
@@ -21,7 +21,7 @@ const Navbar = () => {
     
 
     const getcat=async()=>{
-        const res=await axios.get('/catg/get_category')
+        const res=await axios.get('https://cloneprojectamzon.herokuapp.com/catg/get_category')
         setCat(res.data)
         // console.log(res.data)
     }
@@ -38,7 +38,7 @@ const logout=()=>{
         window.location.reload()
 }
 const getData=async()=>{
-    const res=await axios.get('/pdt/get_products')
+    const res=await axios.get('https://cloneprojectamzon.herokuapp.com/pdt/get_products')
     // console.log(res.data)
     setProducts(res.data.sort((p1, p2) => {
         return new Date(p2.date) - new Date(p1.date);

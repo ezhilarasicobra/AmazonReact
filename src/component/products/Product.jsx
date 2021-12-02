@@ -47,7 +47,7 @@ const notify=(msg)=>{
 
     const addWish=async(id)=>{
         // console.log(id)
-        const res=await axios.post('/pdt/add_wishlist',{
+        const res=await axios.post('https://cloneprojectamzon.herokuapp.com/pdt/add_wishlist',{
             productID:id,
             userID:AmazonUserId
         })

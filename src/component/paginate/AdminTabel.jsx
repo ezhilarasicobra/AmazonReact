@@ -16,7 +16,7 @@ const inputHandel=async(e)=>{
 
     }
 // console.log(userid)
-    socket.current = io("http://localhost:7000");  
+    socket.current = io("https://cloneprojectamzon.herokuapp.com/");  
        socket.current.emit("sendUpdate", {
         
         receiverid:userid,
@@ -24,7 +24,7 @@ const inputHandel=async(e)=>{
        
       });
 
-    const res=await axios.post('/order/update_order',obj)
+    const res=await axios.post('https://cloneprojectamzon.herokuapp.com/order/update_order',obj)
     if(res.data)
     {
         getData()
