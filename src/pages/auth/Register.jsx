@@ -4,7 +4,7 @@ import './Auth.css'
 import axios from 'axios'
 
 
-const path='https://cloneprojectamzon.herokuapp.com/'
+const path='http://localhost:4001/'
 
 const Register = () => {
     const [name, setName] = useState("")
