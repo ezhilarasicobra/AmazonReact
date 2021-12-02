@@ -16,7 +16,7 @@ const AmazonEmail=localStorage.getItem('AmazonEmail')
 
 
    const checkAuth=()=>{
-    axios.get("/auth/isAuth",{
+    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -46,7 +46,7 @@ const AmazonEmail=localStorage.getItem('AmazonEmail')
 
 
  const getaddress=async ()=>{
-    const res=await axios.get(`/auth/getaddress/${AmazonUserId}`)
+    const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/auth/getaddress/${AmazonUserId}`)
     
      setPhone(res.data[0].phone)
      setAddr(res.data[0].address)
@@ -69,7 +69,7 @@ const AmazonEmail=localStorage.getItem('AmazonEmail')
             addressId:id
         }
        
-        const res=await axios.post(`/auth/edit_address`,data)
+        const res=await axios.post(`https://cloneprojectamzon.herokuapp.com/auth/edit_address`,data)
         his.push("/cart-details")
          
         }

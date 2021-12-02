@@ -17,7 +17,7 @@ const Dashboard = () => {
 // const his=useHistory()
 
     const getData=async()=>{
-        const res=await axios.get("/order/all_order")
+        const res=await axios.get("https://cloneprojectamzon.herokuapp.com/order/all_order")
         setData(res.data.sort((p1, p2) => {
             return new Date(p2.date) - new Date(p1.date);
           }))

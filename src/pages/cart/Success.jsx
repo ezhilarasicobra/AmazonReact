@@ -10,7 +10,7 @@ const Success = () => {
     const timeout = useRef(null)
     const loc=useLocation()
     const checkAuth=()=>{
-        axios.get("/auth/isAuth",{
+        axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Amazontoken")
             }
@@ -48,7 +48,7 @@ const Success = () => {
         //  console.log(pyid)
        if(Amazonlongid === pyid)
        {
-        const res=  await axios.get(`/order/paydetails/${pyid}`)
+        const res=  await axios.get(`https://cloneprojectamzon.herokuapp.com/order/paydetails/${pyid}`)
         //    console.log(his)
         // console.log(res)
 

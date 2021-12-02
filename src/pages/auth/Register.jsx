@@ -4,7 +4,7 @@ import './Auth.css'
 import axios from 'axios'
 
 
-const path='http://localhost:4001/'
+const path='https://cloneprojectamzon.herokuapp.com/'
 
 const Register = () => {
     const [name, setName] = useState("")
@@ -17,7 +17,7 @@ const Register = () => {
   
 
     const checkAuth=()=>{
-        axios.get("/auth/isAuth",{
+        axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
             headers:{
              "x-access-token":localStorage.getItem("Amazontoken")
             }
@@ -53,7 +53,7 @@ const Register = () => {
             email,
             password
         }
-        const res=await axios.post("/auth/register", data);
+        const res=await axios.post("https://cloneprojectamzon.herokuapp.com/auth/register", data);
         // console.log(res.data)
         if(res.data.msg)
         {

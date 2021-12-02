@@ -5,7 +5,7 @@ const Error = () => {
     const his=useHistory()
     const timeout = useRef(null)
  const checkAuth=()=>{
-    axios.get("/auth/isAuth",{
+    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }

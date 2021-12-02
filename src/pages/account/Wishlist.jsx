@@ -10,7 +10,7 @@ const Wishlist = () => {
     const AmazonUserId = localStorage.getItem('AmazonUserId')
 
     const checkAuth = () => {
-        axios.get("/auth/isAuth", {
+        axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth", {
             headers: {
                 "x-access-token": localStorage.getItem("Amazontoken")
             }
@@ -36,7 +36,7 @@ const Wishlist = () => {
     }, [])
     const getOrderDetails = async () => {
 
-        const res = await axios.get(`/pdt/get_wishlist/${AmazonUserId}`)
+        const res = await axios.get(`https://cloneprojectamzon.herokuapp.com/pdt/get_wishlist/${AmazonUserId}`)
         // console.log(res.data)
         setOrder(res.data.sort((p1, p2) => {
             return new Date(p2.date) - new Date(p1.date);

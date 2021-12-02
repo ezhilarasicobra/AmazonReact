@@ -10,7 +10,7 @@ const OrderDetails = () => {
     const {id}=useParams()
    
  const checkAuth=()=>{
-    axios.get("/auth/isAuth",{
+    axios.get("https://cloneprojectamzon.herokuapp.com/auth/isAuth",{
         headers:{
          "x-access-token":localStorage.getItem("Amazontoken")
         }
@@ -38,7 +38,7 @@ const OrderDetails = () => {
  },[])
     const getOrderDetails=async()=>{
         
-        const res=await axios.get(`/order/getmy_order_det/${id}`)
+        const res=await axios.get(`https://cloneprojectamzon.herokuapp.com/order/getmy_order_det/${id}`)
         // console.log(res.data)
         setOrder(res.data)
     }
