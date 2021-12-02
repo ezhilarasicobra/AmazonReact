@@ -3,7 +3,7 @@ import { NavLink,useHistory } from 'react-router-dom'
 import './Auth.css'
 import axios from 'axios'
 
-const path='http://localhost:4001/'
+const path='https://cloneprojectamzon.herokuapp.com/'
 const Login = () => {
    
     const [email, setEmail] = useState("")
