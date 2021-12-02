@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <>
         <div className="footer" style={{
-            background:"linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://localhost:4001/assets/footer.jpg')",
+            background:"linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://cloneprojectamzon.herokuapp.com/assets/footer.jpg')",
             backgroundPosition:'center',
             backgroundRepeat:'no-repeat',
             backgroundSize:'cover'
